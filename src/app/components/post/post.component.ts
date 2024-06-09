@@ -8,8 +8,6 @@ import { deletePost } from './state/post.actions';
 
 @Component({
   selector: 'app-post',
-  standalone: true,
-  imports: [],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css'
 })

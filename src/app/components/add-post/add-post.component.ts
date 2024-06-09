@@ -8,8 +8,6 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-post',
-  standalone: true,
-  imports: [],
   templateUrl: './add-post.component.html',
   styleUrl: './add-post.component.css'
 })

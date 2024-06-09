@@ -10,8 +10,6 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-edit-post',
-  standalone: true,
-  imports: [],
   templateUrl: './edit-post.component.html',
   styleUrl: './edit-post.component.css'
 })
@@ -29,7 +27,7 @@ export class EditPostComponent implements OnInit, OnDestroy{
   ngOnInit() {
     // --------------------------------------
     this.route.params.subscribe((params) => {
-      const id = params.id;
+      const id = params['id'];
       // console.log(params);
       this.postSubscription = this.store
         .select(getPostById, { id })
