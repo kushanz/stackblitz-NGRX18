@@ -1,19 +1,12 @@
-import { Component } from '@angular/core';
-import { bootstrapApplication } from '@angular/platform-browser';
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import 'zone.js';
+import { AppModule } from './app/app.module'; // Adjust the path if needed
+import { environment } from './environment';
 
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  template: `
-    <h1>Hello from {{ name }}!</h1>
-    <a target="_blank" href="https://angular.dev/overview">
-      Learn more about Angular
-    </a>
-  `,
-})
-export class App {
-  name = 'Angular';
+if (environment.production) {
+  enableProdMode();
 }
-
-bootstrapApplication(App);
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch((err) => console.error(err));
